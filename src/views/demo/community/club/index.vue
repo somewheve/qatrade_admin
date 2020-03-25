@@ -1,5 +1,5 @@
 <template>
-  <d2-container-frame src="https://d2.pub/zh/doc/d2-admin"/>
+  <d2-container-frame src="http://www.yutiansut.com:3000"/>
 </template>
 
 <script>

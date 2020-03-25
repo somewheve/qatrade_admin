@@ -6,7 +6,8 @@ import App from './App'
 import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
-
+import $ from 'jquery'
+window.self.$ = $
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'
@@ -42,8 +43,10 @@ new Vue({
     // 检测路由变化切换侧边栏内容
     '$route.matched': {
       handler (matched) {
+        console.log(matched);
         if (matched.length > 0) {
           const _side = menuAside.filter(menu => menu.path === matched[0].path)
+          console.log(_side);
           this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
         }
       },
